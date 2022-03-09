@@ -1,0 +1,56 @@
+def strip_ali(str1, chr=" ", type="all"):
+    # type="r"  ==>  string.rstrip()
+    # type="l"  ==>  string.lstrip()
+    # type="all"  ==>  string.strip()
+	
+    #==========right and left============#
+	
+    if type=="all":
+		
+	resAll = list(str1)
+
+	while True:
+            if resAll[0]==chr:
+	        resAll.pop(0)
+	    else:
+	        break
+				
+	while True:
+	    if resAll[-1]==chr:
+		resAll.pop(-1)
+	    else:
+		break
+		
+				
+    return "".join(resAll)
+				
+    #==========right============#	
+	
+    elif type=="l":
+	resL = list(str1)
+
+	while True:
+	    if resL[0]==chr:
+		resL.pop(0)
+	    else:
+		break
+
+    return "".join(resL)
+	
+    #==========left============#	
+	
+    elif type=="r":
+	resR = list(str1)
+
+	while True:
+	    if resR[-1]==chr:
+		resR.pop(-1)
+	    else:
+		break
+
+    return "".join(resR)
+
+
+
+str1 = "your string"
+print(strip_ali(str1))
